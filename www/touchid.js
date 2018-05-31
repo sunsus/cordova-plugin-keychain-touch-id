@@ -5,6 +5,9 @@ var touchid = {
 	isAvailable: function(successCallback, errorCallback){
 		exec(successCallback, errorCallback, "TouchID", "isAvailable", []);
 	},
+	didFingerprintDatabaseChange: function (successCallback, errorCallback) {
+  		exec(successCallback, errorCallback, "TouchID", "didFingerprintDatabaseChange", []);
+	},
 	save: function(key,password, userAuthenticationRequired, successCallback, errorCallback) {
 		exec(successCallback, errorCallback, "TouchID", "save", [key,password, userAuthenticationRequired]);
 	},
@@ -21,9 +24,8 @@ var touchid = {
 		exec(successCallback, errorCallback, "TouchID", "setLocale", [locale]);
 	},
 	move: function(key, packageName,successCallback, errorCallback){
-    	exec(successCallback, errorCallback, "TouchID", "move", [key,packageName]);
-    }
-
+    		exec(successCallback, errorCallback, "TouchID", "move", [key,packageName]);
+    	}
 };
 
 module.exports = touchid;
