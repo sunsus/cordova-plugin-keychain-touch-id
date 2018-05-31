@@ -21,9 +21,11 @@ var touchid = {
 		exec(successCallback, errorCallback, "TouchID", "setLocale", [locale]);
 	},
 	move: function(key, packageName,successCallback, errorCallback){
-    	exec(successCallback, errorCallback, "TouchID", "move", [key,packageName]);
-    }
-
+    		exec(successCallback, errorCallback, "TouchID", "move", [key,packageName]);
+    	},
+	didFingerprintDatabaseChange: function (successCallback, errorCallback) {
+  		exec(successCallback, errorCallback, "TouchID", "didFingerprintDatabaseChange", []);
+	}
 };
 
 module.exports = touchid;
